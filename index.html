@@ -4,14 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   <title>Swara Events · Luxury Wedding Menu</title>
-  <!-- Google Fonts: Playfair Display + Poppins -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <!-- Font Awesome 6 (free) for icons -->
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* ---------- RESET & LUXURY VARIABLES ---------- */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
       --gold: #c6a15b;
@@ -20,7 +19,6 @@
       --black-soft: #2f2a24;
       --black-matte: #1e1b18;
       --cream: #faf7f0;
-      --glass: rgba(255, 255, 255, 0.08);
       --shadow-heavy: 0 20px 40px -12px rgba(0,0,0,0.5);
       --shadow-soft: 0 15px 30px -10px rgba(0,0,0,0.3);
       --border-gold: 1px solid rgba(198, 161, 91, 0.3);
@@ -32,465 +30,159 @@
       line-height: 1.5;
       scroll-behavior: smooth;
     }
-    h1, h2, h3, .heading-font {
-      font-family: 'Playfair Display', serif;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-    }
-    .wrapper {
-      max-width: 1400px;
-      margin: 0 auto;
-      background: var(--black-matte);
-      overflow-x: hidden;
-    }
+    h1, h2, h3, .heading-font { font-family: 'Playfair Display', serif; font-weight: 600; letter-spacing: 0.02em; }
+    .wrapper { max-width: 1400px; margin: 0 auto; background: var(--black-matte); overflow-x: hidden; }
 
-    /* ---------- HERO (FULL SCREEN) ---------- */
+    /* Hero Section */
     .hero {
-      height: 100vh;
-      min-height: 700px;
-      background: linear-gradient(115deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 70%), 
-                  url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop') center/cover;
-      background-attachment: fixed; /* subtle parallax */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
+      height: 100vh; min-height: 700px;
+      background: linear-gradient(115deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 70%), url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop') center/cover;
+      background-attachment: fixed; display: flex; align-items: center; justify-content: center; text-align: center;
       border-bottom: 2px solid var(--gold);
     }
     .hero-content {
-      max-width: 900px;
-      padding: 2rem;
-      backdrop-filter: blur(6px);
-      background: rgba(0,0,0,0.3);
-      border: 1px solid rgba(198, 161, 91, 0.2);
-      border-radius: 32px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+      max-width: 900px; padding: 2rem; backdrop-filter: blur(6px); background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(198, 161, 91, 0.2); border-radius: 32px; box-shadow: 0 30px 60px rgba(0,0,0,0.5);
     }
-    .hero h1 {
-      font-size: clamp(3rem, 12vw, 5.5rem);
-      color: var(--gold);
-      text-shadow: 0 4px 15px rgba(0,0,0,0.7);
-      line-height: 1.1;
-      margin-bottom: 0.5rem;
-    }
-    .hero .tagline {
-      font-size: clamp(1.1rem, 3vw, 1.6rem);
-      font-weight: 300;
-      letter-spacing: 2px;
-      margin-bottom: 2rem;
-      color: #fff0e0;
-    }
-    .btn-group {
-      display: flex;
-      gap: 1.5rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+    .hero h1 { font-size: clamp(3rem, 12vw, 5.5rem); color: var(--gold); text-shadow: 0 4px 15px rgba(0,0,0,0.7); line-height: 1.1; margin-bottom: 0.5rem; }
+    .hero .tagline { font-size: clamp(1.1rem, 3vw, 1.6rem); font-weight: 300; letter-spacing: 2px; margin-bottom: 2rem; color: #fff0e0; }
+    .btn-group { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
     .btn {
-      font-family: 'Poppins', sans-serif;
-      padding: 1rem 2.8rem;
-      border-radius: 50px;
-      font-weight: 500;
-      font-size: 1rem;
-      letter-spacing: 1px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
+      font-family: 'Poppins', sans-serif; padding: 1rem 2.8rem; border-radius: 50px; font-weight: 500; font-size: 1rem;
+      letter-spacing: 1px; border: none; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: inline-block;
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
-    .btn-primary {
-      background: var(--gold);
-      color: #000;
-      border: 1px solid #f5d89c;
-    }
-    .btn-primary:hover {
-      background: #dbb268;
-      transform: translateY(-4px);
-      box-shadow: 0 18px 30px rgba(198,161,91,0.3);
-    }
-    .btn-outline {
-      background: transparent;
-      border: 2px solid var(--gold);
-      color: white;
-    }
-    .btn-outline:hover {
-      background: var(--gold);
-      color: black;
-      transform: translateY(-4px);
-    }
+    .btn-primary { background: var(--gold); color: #000; border: 1px solid #f5d89c; }
+    .btn-primary:hover { background: #dbb268; transform: translateY(-4px); box-shadow: 0 18px 30px rgba(198,161,91,0.3); }
+    .btn-outline { background: transparent; border: 2px solid var(--gold); color: white; }
+    .btn-outline:hover { background: var(--gold); color: black; transform: translateY(-4px); }
 
-    /* ---------- STICKY CATEGORY TABS ---------- */
+    /* Sticky Category Tabs */
     .tabs-container {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(26, 23, 20, 0.9);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--gold);
-      padding: 0.7rem 1rem;
+      position: sticky; top: 0; z-index: 100; background: rgba(26, 23, 20, 0.9); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--gold); padding: 0.7rem 1rem;
     }
     .tabs-scroll {
-      display: flex;
-      gap: 0.8rem;
-      overflow-x: auto;
-      scrollbar-width: none;
-      justify-content: center;
-      max-width: 1200px;
-      margin: 0 auto;
+      display: flex; gap: 0.8rem; overflow-x: auto; scrollbar-width: none; justify-content: flex-start;
+      max-width: 1200px; margin: 0 auto; -webkit-overflow-scrolling: touch;
     }
     .tabs-scroll::-webkit-scrollbar { display: none; }
     .tab-btn {
-      flex: 0 0 auto;
-      background: transparent;
-      border: 1px solid rgba(198,161,91,0.5);
-      color: #f0e6d8;
-      padding: 0.8rem 2rem;
-      border-radius: 40px;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 500;
-      font-size: 0.95rem;
-      white-space: nowrap;
-      cursor: pointer;
-      transition: all 0.3s;
-      backdrop-filter: blur(8px);
+      flex: 0 0 auto; background: transparent; border: 1px solid rgba(198,161,91,0.5); color: #f0e6d8;
+      padding: 0.8rem 2rem; border-radius: 40px; font-family: 'Poppins', sans-serif; font-weight: 500;
+      font-size: 0.95rem; white-space: nowrap; cursor: pointer; transition: all 0.3s; backdrop-filter: blur(8px);
     }
-    .tab-btn.active {
-      background: var(--gold);
-      border-color: var(--gold);
-      color: #000;
-      box-shadow: 0 0 20px #c6a15b;
-    }
+    .tab-btn.active { background: var(--gold); border-color: var(--gold); color: #000; box-shadow: 0 0 20px #c6a15b; }
 
-    /* ---------- SERVICES SECTION ---------- */
-    .services-section {
-      max-width: 1300px;
-      margin: 2rem auto 4rem;
-      padding: 0 1.5rem;
-    }
-    .category-section {
-      margin-bottom: 4rem;
-      transition: opacity 0.3s ease;
-    }
-    .category-title {
-      font-size: 2.5rem;
-      color: var(--gold);
-      border-left: 6px solid var(--gold);
-      padding-left: 1.5rem;
-      margin-bottom: 2rem;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-    }
+    /* Services Grid */
+    .services-section { max-width: 1300px; margin: 2rem auto 4rem; padding: 0 1rem; }
+    .category-section { margin-bottom: 4rem; transition: opacity 0.3s ease; }
+    .category-title { font-size: 2.5rem; color: var(--gold); border-left: 6px solid var(--gold); padding-left: 1.5rem; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 3px; }
+    .services-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+    @media (min-width: 640px) { .services-grid { grid-template-columns: repeat(2, 1fr); } .tabs-scroll { justify-content: center; } }
+    @media (min-width: 1024px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
 
-    /* ---------- LUXURY CARD (LARGE, GLASS, GALLERY) ---------- */
+    /* Luxury Card */
     .service-card {
-      background: rgba(20, 18, 16, 0.8);
-      backdrop-filter: blur(10px);
-      border: var(--border-gold);
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-      transition: all 0.3s cubic-bezier(0.2,0.9,0.3,1.1);
-      display: flex;
-      flex-direction: column;
+      background: rgba(20, 18, 16, 0.8); backdrop-filter: blur(10px); border: var(--border-gold);
+      border-radius: 28px; overflow: hidden; box-shadow: var(--shadow-soft);
+      transition: all 0.3s cubic-bezier(0.2,0.9,0.3,1.1); display: flex; flex-direction: column; width: 100%;
     }
-    .service-card:hover {
-      transform: scale(1.02) translateY(-8px);
-      box-shadow: var(--shadow-heavy), 0 0 0 2px rgba(198,161,91,0.2);
-      border-color: var(--gold);
-    }
-
-    /* mini gallery / slider */
-    .card-gallery {
-      position: relative;
-      width: 100%;
-      height: 220px;
-      overflow: hidden;
-      background: #222;
-    }
-    .gallery-slider {
-      display: flex;
-      height: 100%;
-      transition: transform 0.4s ease;
-    }
-    .gallery-slider img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      flex-shrink: 0;
-      background: #3a2e26;
-      border-bottom: 2px solid var(--gold);
-    }
-    .gallery-nav {
-      position: absolute;
-      bottom: 12px;
-      right: 12px;
-      display: flex;
-      gap: 8px;
-      z-index: 5;
-    }
-    .gallery-dot {
-      width: 32px;
-      height: 5px;
-      background: rgba(255,255,255,0.4);
-      border-radius: 10px;
-      cursor: pointer;
-      transition: 0.2s;
-      border: 1px solid rgba(0,0,0,0.3);
-    }
-    .gallery-dot.active-dot {
-      background: var(--gold);
-      width: 40px;
-    }
-    .card-content {
-      padding: 1.5rem 1.5rem 1.8rem;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-    .service-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: #fff8ed;
-      margin-bottom: 0.25rem;
-      line-height: 1.2;
-    }
-    .service-desc {
-      font-size: 0.9rem;
-      color: #cfc5b8;
-      margin: 0.5rem 0 1rem;
-    }
-    .price-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 0.5rem 0 1.2rem;
-    }
-    .price {
-      background: rgba(198,161,91,0.15);
-      border: 1px solid var(--gold);
-      padding: 0.4rem 1.3rem;
-      border-radius: 40px;
-      font-weight: 600;
-      color: var(--gold-light);
-      font-size: 1.2rem;
-    }
-    .inquiry-badge {
-      font-size: 0.9rem;
-      color: #b5a17c;
-      font-style: italic;
-    }
-    .card-actions {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: auto;
-      border-top: 1px dashed rgba(198,161,91,0.4);
-      padding-top: 1rem;
-    }
+    .service-card:hover { transform: scale(1.02) translateY(-8px); box-shadow: var(--shadow-heavy), 0 0 0 2px rgba(198,161,91,0.2); border-color: var(--gold); }
+    .card-gallery { position: relative; width: 100%; height: 220px; overflow: hidden; background: #222; }
+    .gallery-slider { display: flex; height: 100%; transition: transform 0.4s ease; }
+    .gallery-slider img { width: 100%; height: 100%; object-fit: cover; flex-shrink: 0; border-bottom: 2px solid var(--gold); }
+    .gallery-nav { position: absolute; bottom: 12px; right: 12px; display: flex; gap: 8px; z-index: 5; }
+    .gallery-dot { width: 32px; height: 5px; background: rgba(255,255,255,0.4); border-radius: 10px; cursor: pointer; transition: 0.2s; border: 1px solid rgba(0,0,0,0.3); }
+    .gallery-dot.active-dot { background: var(--gold); width: 40px; }
+    .card-content { padding: 1.5rem 1.5rem 1.8rem; display: flex; flex-direction: column; flex: 1; }
+    .service-name { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 600; color: #fff8ed; margin-bottom: 0.25rem; line-height: 1.2; }
+    .service-desc { font-size: 0.9rem; color: #cfc5b8; margin: 0.5rem 0 1rem; }
+    .price-row { display: flex; align-items: center; gap: 10px; margin: 0.5rem 0 1.2rem; }
+    .price { background: rgba(198,161,91,0.15); border: 1px solid var(--gold); padding: 0.4rem 1.3rem; border-radius: 40px; font-weight: 600; color: var(--gold-light); font-size: 1.2rem; }
+    .inquiry-badge { font-size: 0.9rem; color: #b5a17c; font-style: italic; }
+    .card-actions { display: flex; align-items: center; justify-content: space-between; margin-top: auto; border-top: 1px dashed rgba(198,161,91,0.4); padding-top: 1rem; }
     .add-to-cart {
-      background: transparent;
-      border: 2px solid var(--gold);
-      color: var(--gold);
-      padding: 0.5rem 1.8rem;
-      border-radius: 40px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      background: transparent; border: 2px solid var(--gold); color: var(--gold); padding: 0.5rem 1.8rem;
+      border-radius: 40px; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: 0.2s; display: flex; align-items: center; gap: 8px;
     }
-    .add-to-cart:hover {
-      background: var(--gold);
-      color: #000;
-    }
-    .lightbox-btn {
-      background: none;
-      border: none;
-      color: #ddd;
-      font-size: 1.2rem;
-      cursor: pointer;
-      padding: 0 5px;
-    }
+    .add-to-cart:hover { background: var(--gold); color: #000; }
+    .lightbox-btn { background: none; border: none; color: #ddd; font-size: 1.2rem; cursor: pointer; padding: 0 5px; }
     .lightbox-btn:hover { color: var(--gold); }
 
-    /* ---------- CART FLOATING ---------- */
+    /* FLOATING CART BUTTON (now at bottom right, where WhatsApp was) */
     .cart-float {
-      position: fixed;
-      top: 80px;
-      right: 20px;
-      z-index: 200;
-      background: #1e1b18;
-      border: 2px solid var(--gold);
-      border-radius: 60px;
-      padding: 0.8rem 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      box-shadow: 0 15px 30px black;
-      backdrop-filter: blur(12px);
-      cursor: pointer;
+      position: fixed; bottom: 20px; right: 15px; z-index: 200;
+      background: #1e1b18; border: 2px solid var(--gold); border-radius: 60px;
+      padding: 0.9rem 1.5rem; display: flex; align-items: center; gap: 12px;
+      box-shadow: 0 15px 30px black; backdrop-filter: blur(12px); cursor: pointer;
     }
-    .cart-icon {
-      color: var(--gold);
-      font-size: 1.8rem;
-      position: relative;
-    }
+    .cart-icon { color: var(--gold); font-size: 2rem; position: relative; }
     .cart-count {
-      background: #c6a15b;
-      color: black;
-      border-radius: 50%;
-      width: 22px;
-      height: 22px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      font-weight: bold;
-      position: absolute;
-      top: -5px;
-      right: -10px;
+      background: #c6a15b; color: black; border-radius: 50%; width: 24px; height: 24px;
+      display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold;
+      position: absolute; top: -5px; right: -10px;
     }
     .cart-panel {
-      position: fixed;
-      top: 140px;
-      right: 20px;
-      width: 320px;
-      background: #231f1b;
-      border: 1px solid var(--gold);
-      border-radius: 28px;
-      padding: 1.2rem;
-      box-shadow: var(--shadow-heavy);
-      backdrop-filter: blur(16px);
-      display: none;
-      z-index: 210;
+      position: fixed; bottom: 90px; right: 15px; width: 300px; max-width: calc(100% - 30px);
+      background: #231f1b; border: 1px solid var(--gold); border-radius: 28px; padding: 1.2rem;
+      box-shadow: var(--shadow-heavy); backdrop-filter: blur(16px); display: none; z-index: 210;
     }
     .cart-panel.show { display: block; }
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 0.6rem 0;
-      border-bottom: 1px solid #3f372e;
-    }
+    .cart-item { display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #3f372e; flex-wrap: wrap; }
     .cart-item-name { font-weight: 400; }
     .cart-item-qty { display: flex; gap: 10px; align-items: center; }
-    .cart-item-qty button {
-      background: none;
-      border: 1px solid var(--gold);
-      color: white;
-      width: 26px; height: 26px;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-    .cart-total {
-      margin: 1rem 0;
-      font-size: 1.2rem;
-      text-align: right;
-      border-top: 1px solid #3f372e;
-      padding-top: 1rem;
-    }
-    .btn-send-inquiry {
-      background: var(--gold);
-      width: 100%;
-      border: none;
-      padding: 1rem;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-    }
+    .cart-item-qty button { background: none; border: 1px solid var(--gold); color: white; width: 26px; height: 26px; border-radius: 50%; cursor: pointer; }
+    .btn-send-inquiry { background: var(--gold); width: 100%; border: none; padding: 1rem; border-radius: 50px; font-weight: 600; font-size: 1rem; cursor: pointer; margin-top: 1rem; }
 
-    /* ---------- INQUIRY MODAL (GLASS) ---------- */
+    /* Inquiry Modal */
     .modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.8);
-      backdrop-filter: blur(8px);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
+      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); z-index: 1000;
+      align-items: center; justify-content: center;
     }
     .modal.active { display: flex; }
     .modal-content {
-      background: #1f1b17;
-      border: 2px solid var(--gold);
-      border-radius: 40px;
-      max-width: 500px;
-      width: 90%;
-      padding: 2.5rem;
-      box-shadow: 0 40px 80px gold;
+      background: #1f1b17; border: 2px solid var(--gold); border-radius: 40px;
+      max-width: 500px; width: 90%; padding: 2rem 1.5rem; max-height: 90vh; overflow-y: auto;
     }
-    .modal-content h3 {
-      font-size: 2rem;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-    }
+    .modal-content h3 { font-size: 2rem; color: var(--gold); margin-bottom: 1.5rem; }
     .modal-content input, .modal-content textarea, .modal-content select {
-      width: 100%;
-      padding: 1rem;
-      margin-bottom: 1.2rem;
-      background: #2f2a24;
-      border: 1px solid #5a4d3e;
-      border-radius: 50px;
-      font-family: 'Poppins', sans-serif;
-      color: white;
+      width: 100%; padding: 1rem; margin-bottom: 1.2rem; background: #2f2a24;
+      border: 1px solid #5a4d3e; border-radius: 50px; font-family: 'Poppins', sans-serif; color: white;
     }
-    .modal-content button {
-      background: var(--gold);
-      border: none;
-      padding: 1rem;
-      width: 100%;
-      border-radius: 50px;
-      font-weight: 600;
-    }
+    .modal-content button { background: var(--gold); border: none; padding: 1rem; width: 100%; border-radius: 50px; font-weight: 600; margin-bottom: 0.5rem; cursor: pointer; }
 
-    /* ---------- FLOATING WHATSAPP ---------- */
-    .wa-float {
-      position: fixed;
-      bottom: 30px;
-      right: 20px;
-      background: #25D366;
-      width: 60px; height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      color: white;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-      z-index: 150;
-      border: 2px solid #fff2d7;
-    }
-
-    /* ---------- HIDDEN / UTILS ---------- */
-    .hidden-category { display: none; }
+    /* Lightbox */
     .lightbox-modal {
-      display: none;
-      position: fixed;
-      top:0;left:0;width:100%;height:100%;
-      background:rgba(0,0,0,0.95);
-      z-index:2000;
-      justify-content:center;
-      align-items:center;
+      display: none; position: fixed; top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,0.95); z-index:2000; justify-content:center; align-items:center;
     }
     .lightbox-modal img { max-width:90%; max-height:90%; border:3px solid gold; }
     .lightbox-modal.show { display: flex; }
+
+    /* Footer with Social + WhatsApp */
+    .luxury-footer {
+      text-align: center; padding: 2rem; border-top: 1px solid #3f372e; color: #b5a58b;
+    }
+    .social-links {
+      display: flex; gap: 2rem; justify-content: center; align-items: center; margin: 1rem 0 0.5rem;
+      flex-wrap: wrap;
+    }
+    .social-links a {
+      color: var(--gold-light); font-size: 1.5rem; transition: 0.2s; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 5px;
+    }
+    .social-links a:hover { color: var(--gold); transform: scale(1.1); }
+    .social-links .whatsapp-icon { color: #25D366; } /* keep green for WA */
+
+    /* hidden */
+    .hidden-category { display: none; }
   </style>
 </head>
 <body>
   <div class="wrapper">
-    <!-- HERO FULL SCREEN -->
+    <!-- HERO SECTION -->
     <section class="hero" id="home">
       <div class="hero-content">
         <h1>Swara Events</h1>
@@ -503,7 +195,7 @@
     </section>
 
     <!-- STICKY TABS -->
-    <div class="tabs-container" id="tabContainer">
+    <div class="tabs-container">
       <div class="tabs-scroll" id="tabScroll"></div>
     </div>
 
@@ -512,7 +204,7 @@
       <div id="servicesContainer"></div>
     </section>
 
-    <!-- FLOATING CART -->
+    <!-- FLOATING CART BUTTON (now at bottom right) -->
     <div class="cart-float" id="cartFloat">
       <div class="cart-icon">
         <i class="fas fa-shopping-bag"></i>
@@ -520,10 +212,10 @@
       </div>
       <span style="color:white;">Cart</span>
     </div>
+    <!-- CART PANEL -->
     <div class="cart-panel" id="cartPanel">
       <h4 style="color:gold; margin-bottom:1rem;">Your selection</h4>
       <div id="cartItemsList"></div>
-      <div class="cart-total" id="cartTotalDisplay"></div>
       <button class="btn-send-inquiry" id="sendInquiryBtn">Send Inquiry</button>
     </div>
 
@@ -540,90 +232,75 @@
         <input type="text" placeholder="Event Location" id="inquiryLocation">
         <textarea placeholder="Extra message" rows="2" id="inquiryMsg"></textarea>
         <button id="submitInquiry">📲 Send to WhatsApp</button>
-        <button style="background:transparent; color:white; margin-top:0.5rem;" id="closeModal">Close</button>
+        <button style="background:transparent; color:white;" id="closeModal">Close</button>
       </div>
     </div>
 
-    <!-- LIGHTBOX (simple) -->
+    <!-- LIGHTBOX -->
     <div class="lightbox-modal" id="lightbox">
       <img id="lightboxImg" src="" alt="">
     </div>
 
-    <!-- FLOATING WHATSAPP -->
-    <a href="https://wa.me/919876543210" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
-    <!-- FOOTER (minimal luxury) -->
-    <footer style="text-align:center; padding:2rem; border-top:1px solid #3f372e; color:#b5a58b;">
+    <!-- FOOTER with SOCIAL + WHATSAPP (now here) -->
+    <footer class="luxury-footer">
       <p>Swara Events — luxury wedding & celebration designers</p>
-      <p style="margin-top:0.5rem;">
-        <i class="fab fa-instagram" style="margin:0 10px; color:gold;"></i>
-        <i class="fab fa-facebook" style="margin:0 10px; color:gold;"></i>
-        <i class="fab fa-pinterest" style="margin:0 10px; color:gold;"></i>
-      </p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="#"><i class="fab fa-pinterest"></i> Pinterest</a>
+        <!-- WhatsApp button shifted here -->
+        <a href="https://wa.me/919284969878" class="whatsapp-icon" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
     </footer>
   </div>
 
   <script>
     (function(){
-      // ---------- LUXURY SERVICES JSON (with multiple images) ----------
+      // Services Data (local images path)
       const servicesData = [
-        { cat:"Wedding Services", name:"Royal Baraat Entry", desc:"Grand entry with horses, drummers & royal umbrella", price:"₹ 2,80,000", images:["https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&auto=format","https://images.unsplash.com/photo-1527853787696-f7be74f2e39a?w=600&auto=format","https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&auto=format"] },
-        { cat:"Wedding Services", name:"Grand Couple Entry", desc:"Spectacular choreographed entry with LED & flowers", price:"₹ 1,50,000", images:["https://images.unsplash.com/photo-1507504031003-b417219a0fde?w=600&auto=format","https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&auto=format","https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=600&auto=format"] },
-        { cat:"Wedding Services", name:"Wedding Stage Setup", desc:"Floral & modern minimalist stage design", price:"On Inquiry", images:["https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&auto=format","https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&auto=format","https://images.unsplash.com/photo-1507504031003-b417219a0fde?w=600&auto=format"] },
-
-        { cat:"Baraat Entry", name:"Brass Band", desc:"12-piece traditional brass band", price:"₹ 85,000", images:["https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=600&auto=format","https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&auto=format"] },
-        { cat:"Baraat Entry", name:"Punjabi Dhol", desc:"High-energy dhol players (2)", price:"₹ 42,000", images:["https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&auto=format","https://images.unsplash.com/photo-1558383331-52899660b988?w=600&auto=format"] },
-        { cat:"Baraat Entry", name:"LED Umbrella Entry", desc:"Glowing umbrella dance crew", price:"₹ 65,000", images:["https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&auto=format","https://images.unsplash.com/photo-1527853787696-f7be74f2e39a?w=600&auto=format"] },
-
-        { cat:"Entertainment", name:"DJ Night", desc:"Premium sound & laser show", price:"₹ 1,20,000", images:["https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&auto=format","https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&auto=format"] },
-        { cat:"Entertainment", name:"Live Music Band", desc:"Sufi / bollywood 6-piece live", price:"₹ 2,50,000", images:["https://images.unsplash.com/photo-1501612780327-45045538702b?w=600&auto=format","https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format"] },
-        { cat:"Entertainment", name:"Stage Shows", desc:"Interactive performances & choreo", price:"On Inquiry", images:["https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=600&auto=format","https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=600&auto=format"] },
-
-        { cat:"Vehicles", name:"Vintage Wedding Car", desc:"Rolls-Royce / Bentley with chauffeur", price:"₹ 1,95,000", images:["https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&auto=format","https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=600&auto=format"] },
-        { cat:"Vehicles", name:"Horse Baggi", desc:"Decorated phaeton carriage", price:"₹ 58,000", images:["https://images.unsplash.com/photo-1516466723877-e4ec1d736c8a?w=600&auto=format","https://images.unsplash.com/photo-1527853787696-f7be74f2e39a?w=600&auto=format"] },
-
-        { cat:"Special Effects", name:"Cold Pyro", desc:"Indoor fireworks / sparklers", price:"₹ 95,000", images:["https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&auto=format","https://images.unsplash.com/photo-1478147427282-58a87a120781?w=600&auto=format"] },
-        { cat:"Special Effects", name:"Fog Entry", desc:"Dramatic fog / smoke entrance", price:"₹ 45,000", images:["https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&auto=format","https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&auto=format"] },
-        { cat:"Special Effects", name:"LED Dance Floor", desc:"Illuminated programmable floor", price:"₹ 1,80,000", images:["https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&auto=format","https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&auto=format"] }
+        { cat:"Wedding Services", name:"Royal Baraat Entry", desc:"Grand entry with horses, drummers & royal umbrella", price:"₹ 2,80,000", images:["img/baraat1.jpg","img/baraat2.jpg","img/baraat3.jpg"] },
+        { cat:"Wedding Services", name:"Grand Couple Entry", desc:"Spectacular choreographed entry with LED & flowers", price:"₹ 1,50,000", images:["img/couple1.jpg","img/couple2.jpg","img/couple3.jpg"] },
+        { cat:"Wedding Services", name:"Wedding Stage Setup", desc:"Floral & modern minimalist stage design", price:"On Inquiry", images:["img/stage1.jpg","img/stage2.jpg","img/stage3.jpg"] },
+        { cat:"Baraat Entry", name:"Brass Band", desc:"12-piece traditional brass band", price:"₹ 85,000", images:["img/brass1.jpg","img/brass2.jpg"] },
+        { cat:"Baraat Entry", name:"Punjabi Dhol", desc:"High-energy dhol players (2)", price:"₹ 42,000", images:["img/dhol1.jpg","img/dhol2.jpg"] },
+        { cat:"Baraat Entry", name:"LED Umbrella Entry", desc:"Glowing umbrella dance crew", price:"₹ 65,000", images:["img/umbrella1.jpg","img/umbrella2.jpg","img/umbrella3.jpg"] },
+        { cat:"Entertainment", name:"DJ Night", desc:"Premium sound & laser show", price:"₹ 1,20,000", images:["img/dj1.jpg","img/dj2.jpg"] },
+        { cat:"Entertainment", name:"Live Music Band", desc:"Sufi / bollywood 6-piece live", price:"₹ 2,50,000", images:["img/liveband1.jpg","img/liveband2.jpg"] },
+        { cat:"Entertainment", name:"Stage Shows", desc:"Interactive performances & choreo", price:"On Inquiry", images:["img/stageshow1.jpg","img/stageshow2.jpg"] },
+        { cat:"Vehicles", name:"Vintage Wedding Car", desc:"Rolls-Royce / Bentley with chauffeur", price:"₹ 1,95,000", images:["img/vintagecar1.jpg","img/vintagecar2.jpg"] },
+        { cat:"Vehicles", name:"Horse Baggi", desc:"Decorated phaeton carriage", price:"₹ 58,000", images:["img/baggi1.jpg","img/baggi2.jpg"] },
+        { cat:"Special Effects", name:"Cold Pyro", desc:"Indoor fireworks / sparklers", price:"₹ 95,000", images:["img/coldpyro1.jpg","img/coldpyro2.jpg"] },
+        { cat:"Special Effects", name:"Fog Entry", desc:"Dramatic fog / smoke entrance", price:"₹ 45,000", images:["img/fog1.jpg","img/fog2.jpg"] },
+        { cat:"Special Effects", name:"LED Dance Floor", desc:"Illuminated programmable floor", price:"₹ 1,80,000", images:["img/ledfloor1.jpg","img/ledfloor2.jpg","img/ledfloor3.jpg"] }
       ];
-
       const categories = ["Wedding Services","Baraat Entry","Entertainment","Vehicles","Special Effects"];
-      let cart = []; // { id, name, priceText }
+      let cart = [];
 
-      // Render tabs
+      // Render Tabs
       const tabScroll = document.getElementById('tabScroll');
       categories.forEach(cat => {
         const btn = document.createElement('button');
-        btn.className = 'tab-btn';
-        btn.dataset.category = cat;
-        btn.textContent = cat;
+        btn.className = 'tab-btn'; btn.dataset.category = cat; btn.textContent = cat;
         tabScroll.appendChild(btn);
       });
 
-      // Render all cards with gallery & add to cart
+      // Render Cards
       function renderCards() {
         let html = '';
         categories.forEach(cat => {
           const items = servicesData.filter(s => s.cat === cat);
           if(!items.length) return;
-          html += `<div class="category-section" data-category="${cat}">`;
-          html += `<h2 class="category-title">${cat}</h2><div class="services-grid">`;
+          html += `<div class="category-section" data-category="${cat}"><h2 class="category-title">${cat}</h2><div class="services-grid">`;
           items.forEach((s, idx) => {
-            const uniqueId = `${cat}-${idx}-${Date.now()}`;
-            html += `<div class="service-card" data-id="${uniqueId}">`;
-            // gallery slider (simple three dots)
-            html += `<div class="card-gallery" id="gallery-${uniqueId}">`;
-            html += `<div class="gallery-slider" id="slider-${uniqueId}">`;
-            s.images.forEach(img => { html += `<img src="${img}" loading="lazy" alt="${s.name}">`; });
+            const uniqueId = `${cat}-${idx}`;
+            html += `<div class="service-card">`;
+            html += `<div class="card-gallery"><div class="gallery-slider" id="slider-${uniqueId}">`;
+            s.images.forEach(img => { html += `<img src="${img}" loading="lazy" alt="${s.name}" onerror="this.src='https://via.placeholder.com/600x400?text=Luxury'">`; });
             html += `</div><div class="gallery-nav" id="nav-${uniqueId}">`;
-            for(let i=0; i<s.images.length; i++) {
-              html += `<span class="gallery-dot ${i===0?'active-dot':''}" data-index="${i}"></span>`;
-            }
-            html += `</div></div>`; // close gallery
-
+            for(let i=0; i<s.images.length; i++) html += `<span class="gallery-dot ${i===0?'active-dot':''}" data-index="${i}"></span>`;
+            html += `</div></div>`;
             html += `<div class="card-content">
-              <div class="service-name">${s.name}</div>
-              <div class="service-desc">${s.desc}</div>
+              <div class="service-name">${s.name}</div><div class="service-desc">${s.desc}</div>
               <div class="price-row"><span class="price">${s.price}</span><span class="inquiry-badge">exclusive</span></div>
               <div class="card-actions">
                 <button class="add-to-cart" data-name="${s.name}" data-price="${s.price}"><i class="fas fa-plus-circle"></i> Add</button>
@@ -634,36 +311,26 @@
           html += `</div></div>`;
         });
         document.getElementById('servicesContainer').innerHTML = html;
-        attachGalleryListeners();
-        attachAddToCart();
+        attachGalleryListeners(); attachAddToCart();
       }
 
-      // gallery dot click + slide
       function attachGalleryListeners() {
         document.querySelectorAll('.card-gallery').forEach(gallery => {
           const slider = gallery.querySelector('.gallery-slider');
           const dots = gallery.querySelectorAll('.gallery-dot');
           if(!slider || !dots.length) return;
-          const updateSlide = (index) => {
-            slider.style.transform = `translateX(-${index * 100}%)`;
-            dots.forEach((d,i)=> d.classList.toggle('active-dot', i===index));
-          };
-          dots.forEach((dot,i) => {
-            dot.addEventListener('click', (e) => { e.stopPropagation(); updateSlide(i); });
-          });
+          const updateSlide = (index) => { slider.style.transform = `translateX(-${index * 100}%)`; dots.forEach((d,i)=> d.classList.toggle('active-dot', i===index)); };
+          dots.forEach((dot,i) => { dot.addEventListener('click', (e) => { e.stopPropagation(); updateSlide(i); }); });
         });
       }
 
-      // add to cart logic
       function attachAddToCart() {
         document.querySelectorAll('.add-to-cart').forEach(btn => {
           btn.addEventListener('click', (e) => {
             e.stopPropagation();
-            const name = btn.dataset.name;
-            const price = btn.dataset.price;
+            const name = btn.dataset.name; const price = btn.dataset.price;
             const existing = cart.find(item => item.name === name);
-            if(existing) existing.qty++;
-            else cart.push({ name, price, qty:1 });
+            if(existing) existing.qty++; else cart.push({ name, price, qty:1 });
             updateCartUI();
           });
         });
@@ -674,48 +341,41 @@
         let itemsHtml = '';
         cart.forEach((item, idx) => {
           itemsHtml += `<div class="cart-item"><span class="cart-item-name">${item.name}</span>
-            <div class="cart-item-qty"><button class="qty-dec" data-index="${idx}">-</button> ${item.qty} <button class="qty-inc" data-index="${idx}">+</button>
+            <div class="cart-item-qty"><button class="qty-dec" data-index="${idx}">-</button> <span>${item.qty}</span> <button class="qty-inc" data-index="${idx}">+</button>
             <button class="remove-item" data-index="${idx}"><i class="fas fa-trash"></i></button></div></div>`;
         });
         document.getElementById('cartItemsList').innerHTML = itemsHtml || '<p style="color:#a28b72;">Your cart is empty</p>';
-        // attach qty events
-        document.querySelectorAll('.qty-dec').forEach(b => b.addEventListener('click', (e) => { let idx = e.target.dataset.index; if(cart[idx].qty>1) cart[idx].qty--; else cart.splice(idx,1); updateCartUI(); }));
-        document.querySelectorAll('.qty-inc').forEach(b => b.addEventListener('click', (e) => { let idx = e.target.dataset.index; cart[idx].qty++; updateCartUI(); }));
-        document.querySelectorAll('.remove-item').forEach(b => b.addEventListener('click', (e) => { let idx = e.target.dataset.index; cart.splice(idx,1); updateCartUI(); }));
+        // qty events
+        document.querySelectorAll('.qty-dec').forEach(b => b.addEventListener('click', (e) => { let idx = e.target.closest('button')?.dataset?.index; if(idx) { idx=parseInt(idx); if(cart[idx].qty>1) cart[idx].qty--; else cart.splice(idx,1); updateCartUI(); } }));
+        document.querySelectorAll('.qty-inc').forEach(b => b.addEventListener('click', (e) => { let idx = e.target.closest('button')?.dataset?.index; if(idx) { idx=parseInt(idx); cart[idx].qty++; updateCartUI(); } }));
+        document.querySelectorAll('.remove-item').forEach(b => b.addEventListener('click', (e) => { let idx = e.target.closest('button')?.dataset?.index; if(idx) { idx=parseInt(idx); cart.splice(idx,1); updateCartUI(); } }));
       }
 
-      // filter
+      // Filter tabs
       function filterServices(cat) {
-        document.querySelectorAll('.category-section').forEach(s => {
-          s.classList.toggle('hidden-category', s.dataset.category !== cat);
-        });
+        document.querySelectorAll('.category-section').forEach(s => s.classList.toggle('hidden-category', s.dataset.category !== cat));
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.category === cat));
       }
 
-      // lightbox
+      // Lightbox
       const lightbox = document.getElementById('lightbox');
       document.addEventListener('click', (e) => {
         if(e.target.closest('.lightbox-btn')) {
           const btn = e.target.closest('.lightbox-btn');
           const images = JSON.parse(btn.dataset.images);
-          if(images?.length) {
-            document.getElementById('lightboxImg').src = images[0];
-            lightbox.classList.add('show');
-          }
+          if(images?.length) { document.getElementById('lightboxImg').src = images[0]; lightbox.classList.add('show'); }
         }
       });
       lightbox.addEventListener('click', () => lightbox.classList.remove('show'));
 
-      // cart toggle
-      const cartFloat = document.getElementById('cartFloat');
-      const cartPanel = document.getElementById('cartPanel');
-      cartFloat.addEventListener('click', (e) => { cartPanel.classList.toggle('show'); });
+      // Cart toggle
+      document.getElementById('cartFloat').addEventListener('click', (e) => { document.getElementById('cartPanel').classList.toggle('show'); });
 
-      // inquiry modal
+      // Modal & WhatsApp
       const modal = document.getElementById('inquiryModal');
       document.getElementById('sendInquiryBtn').addEventListener('click', ()=> { if(cart.length) modal.classList.add('active'); else alert('Add services first'); });
       document.getElementById('closeModal').addEventListener('click', ()=> modal.classList.remove('active'));
-      document.getElementById('bookEventHero').addEventListener('click', ()=> { modal.classList.add('active'); });
+      document.getElementById('bookEventHero').addEventListener('click', ()=> modal.classList.add('active'));
 
       document.getElementById('submitInquiry').addEventListener('click', ()=> {
         const name = document.getElementById('inquiryName').value.trim() || 'Guest';
@@ -725,21 +385,21 @@
         const location = document.getElementById('inquiryLocation').value || 'Mumbai';
         const msg = document.getElementById('inquiryMsg').value;
 
-        let cartText = '';
-        cart.forEach(i => { cartText += `${i.name} (${i.qty}x)\n`; });
-        const fullMsg = `Hello Swara Events,%0A%0AI want to inquire about:%0A${cartText}%0ACustomer Details:%0AName: ${name}%0APhone: ${phone}%0AEvent Type: ${eventType}%0ADate: ${date}%0ALocation: ${location}%0AMessage: ${msg}%0A%0AThank you!`;
+        let cartList = '';
+        cart.forEach(i => { cartList += `${i.name} (${i.qty}x)\n`; });
+        
+        const fullMsg = `Hello Swara Events,\n\nI want to inquire about the following services:\n\n${cartList}\nCustomer Details:\nName: ${name}\nPhone: ${phone}\nEvent Type: ${eventType}\nEvent Date: ${date}\nLocation: ${location}\nExtra Message: ${msg}\n\nPlease contact me.`;
         window.open(`https://wa.me/919284969878?text=${encodeURIComponent(fullMsg)}`, '_blank');
         modal.classList.remove('active');
       });
 
-      // initial activation
+      // Initialize
       renderCards();
       setTimeout(()=> { 
         filterServices(categories[0]); 
         document.querySelectorAll('.tab-btn').forEach(b => b.addEventListener('click', (e)=> filterServices(e.target.dataset.category)));
       }, 100);
 
-      // view services smooth
       document.getElementById('viewServicesBtn').addEventListener('click', (e) => { e.preventDefault(); document.getElementById('services').scrollIntoView({behavior:'smooth'}); });
     })();
   </script>
