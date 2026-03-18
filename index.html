@@ -303,11 +303,11 @@
       border-color: var(--gold);
     }
 
-    /* BIGGER IMAGE GALLERY - height increased from 220px to 260px */
+    /* BIGGER IMAGE GALLERY WITH NEXT BUTTON */
     .card-gallery {
       position: relative;
       width: 100%;
-      height: 260px;  /* INCREASED SIZE */
+      height: 260px;
       overflow: hidden;
       background: #222;
     }
@@ -328,10 +328,42 @@
     .gallery-slider img:hover {
       transform: scale(1.05);
     }
+    
+    /* नया नेक्स्ट बटन - दाएं कोने में */
+    .next-btn {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      color: var(--gold);
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: 2px solid var(--gold);
+      font-size: 1.5rem;
+      font-weight: bold;
+      z-index: 10;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+    .next-btn:hover {
+      background: var(--gold);
+      color: black;
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 0 20px var(--gold);
+    }
+    
+    /* डॉट्स को थोड़ा सा शिफ्ट किया ताकि बटन से ना टकराएं */
     .gallery-nav {
       position: absolute;
       bottom: 12px;
-      right: 12px;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
       gap: 8px;
       z-index: 5;
@@ -353,6 +385,7 @@
       background: var(--gold);
       width: 40px;
     }
+    
     .card-content {
       padding: 1.5rem 1.5rem 1.8rem;
       display: flex;
@@ -664,7 +697,7 @@
     }
     .social-links a {
       color: var(--gold-light);
-      font-size: 2rem;  /* bigger icons */
+      font-size: 2rem;
       transition: all 0.3s;
       text-decoration: none;
       display: inline-flex;
@@ -754,7 +787,6 @@
         <a href="#"><i class="fab fa-instagram"></i></a>
         <a href="#"><i class="fab fa-facebook"></i></a>
         <a href="#"><i class="fab fa-pinterest"></i></a>
-        <!-- WhatsApp icon only, no text -->
         <a href="https://wa.me/919284969878" class="whatsapp-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
       </div>
     </footer>
@@ -765,27 +797,17 @@
       // Services Data (local images path) - PRICE REMOVED, now shows inquiry text
       const servicesData = [
         { cat:"Wedding Services", name:"Bharat on Wheel", desc:"Grand entry with horses, drummers & royal umbrella", price:null, images:["img/baraat1.jpeg","img/baraat3.jpeg"] },
-        // { cat:"Wedding Services", name:"Grand Couple Entry", desc:"Spectacular choreographed entry with LED & flowers", price:null, images:["img/couple1.jpeg","img/couple2.jpeg","img/couple3.jpeg"] },
-        // { cat:"Wedding Services", name:"Wedding Stage Setup", desc:"Floral & modern minimalist stage design", price:null, images:["img/stage1.jpeg","img/stage2.jpeg","img/stage3.jpeg"] },
         { cat:"Baraat Entry", name:"Brass Band", desc:"12-piece traditional brass band", price:null, images:["img/brass1.jpeg","img/brass2.jpeg"] },
         { cat:"Baraat Entry", name:"Punjabi Dhol", desc:"High-energy Panjabi dhol players", price:null, images:["img/dhol1.jpeg","img/dhol2.jpeg"] },
         { cat:"Baraat Entry", name:"Nashik Dhol", desc:"High-energy Nashik dhol players", price:null, images:["img/nashik_dhol.jpeg"] },
         { cat:"Baraat Entry", name:"LED Umbrella Entry", desc:"Glowing umbrella dance crew", price:null, images:["img/umbrella3.jpeg"] },
-        // { cat:"Entertainment", name:"DJ Night", desc:"Premium sound & laser show", price:null, images:["img/dj1.jpeg","img/dj2.jpeg"] },
-        // { cat:"Entertainment", name:"Live Music Band", desc:"Sufi / bollywood 6-piece live", price:null, images:["img/liveband1.jpeg","img/liveband2.jpeg"] },
-        // { cat:"Entertainment", name:"Stage Shows", desc:"Interactive performances & choreo", price:null, images:["img/stageshow1.jpeg","img/stageshow2.jpeg"] },
         { cat:"Vehicles", name:"Vintage Wedding Car", desc:"Rolls-Royce / Bentley with chauffeur", price:null, images:["img/vintagecar1.jpeg","img/vintagecar1.jpeg"] },
         { cat:"Vehicles", name:"Horse Baggi", desc:"Decorated phaeton carriage", price:null, images:["img/baggi1.jpeg","img/baggi2.jpeg"] },
         { cat:"Vehicles", name:"Horse", desc:"Decorated Horse For groom", price:null, images:["img/Horse1.jpeg","img/Horse2.jpeg"] },
         { cat:"Vehicles", name:"AC Baggi", desc:"Decorated AC Baggi carriage", price:null, images:["img/AC_baggi.jpeg","img/AC_baggi.jpeg"] },
-        { cat:"Vehicles", name:"Jip Rath", desc:"Decorated Jip Rath for special Evets", price:null, images:["img/Jip_rath.jpeg","img/Jip_rath.jpeg"] },
-        // { cat:"Vehicles", name:"Bharat on Wheel", desc:"Decorated Bharat on Wheel for special Evets", price:null, images:["img/Bharat on Wheel.jpeg"] },
-        // { cat:"Special Effects", name:"Cold Pyro", desc:"Indoor fireworks / sparklers", price:null, images:["img/coldpyro1.jpeg","img/coldpyro2.jpeg"] },   
-        // { cat:"Special Effects", name:"Fog Entry", desc:"Dramatic fog / smoke entrance", price:null, images:["img/fog1.jpeg","img/fog2.jpeg"] }, 
-        // { cat:"Special Effects", name:"LED Dance Floor", desc:"Illuminated programmable floor", price:null, images:["img/ledfloor1.jpeg","img/ledfloor2.jpeg","img/ledfloor3.jpeg"] }
+        { cat:"Vehicles", name:"Jip Rath", desc:"Decorated Jip Rath for special Evets", price:null, images:["img/Jip_rath.jpeg","img/Jip_rath.jpeg"] }
       ];
       const categories = ["Wedding Services","Baraat Entry","Vehicles"];
-      // "Special Effects" ,"Entertainment"
       let cart = [];
 
       // Render Tabs
@@ -796,7 +818,7 @@
         tabScroll.appendChild(btn);
       });
 
-      // Render Cards
+      // Render Cards with Next Button
       function renderCards() {
         let html = '';
         categories.forEach(cat => {
@@ -806,9 +828,13 @@
           items.forEach((s, idx) => {
             const uniqueId = `${cat}-${idx}`;
             html += `<div class="service-card">`;
-            html += `<div class="card-gallery"><div class="gallery-slider" id="slider-${uniqueId}">`;
+            html += `<div class="card-gallery" data-card-id="${uniqueId}">`;
+            html += `<div class="gallery-slider" id="slider-${uniqueId}">`;
             s.images.forEach(img => { html += `<img src="${img}" loading="lazy" alt="${s.name}" onerror="this.src='https://via.placeholder.com/600x400?text=Luxury'">`; });
-            html += `</div><div class="gallery-nav" id="nav-${uniqueId}">`;
+            html += `</div>`;
+            // नेक्स्ट बटन यहाँ डाला
+            html += `<div class="next-btn" data-card="${uniqueId}">&#62;</div>`;
+            html += `<div class="gallery-nav" id="nav-${uniqueId}">`;
             for(let i=0; i<s.images.length; i++) html += `<span class="gallery-dot ${i===0?'active-dot':''}" data-index="${i}"></span>`;
             html += `</div></div>`;
             html += `<div class="card-content">
@@ -823,16 +849,58 @@
           html += `</div></div>`;
         });
         document.getElementById('servicesContainer').innerHTML = html;
-        attachGalleryListeners(); attachAddToCart();
+        attachGalleryListeners();
+        attachAddToCart();
+        attachNextButtons(); // नेक्स्ट बटन के लिए लिसनर
       }
 
+      // गैलरी डॉट्स का काम
       function attachGalleryListeners() {
         document.querySelectorAll('.card-gallery').forEach(gallery => {
           const slider = gallery.querySelector('.gallery-slider');
           const dots = gallery.querySelectorAll('.gallery-dot');
           if(!slider || !dots.length) return;
-          const updateSlide = (index) => { slider.style.transform = `translateX(-${index * 100}%)`; dots.forEach((d,i)=> d.classList.toggle('active-dot', i===index)); };
-          dots.forEach((dot,i) => { dot.addEventListener('click', (e) => { e.stopPropagation(); updateSlide(i); }); });
+          
+          const updateSlide = (index) => { 
+            slider.style.transform = `translateX(-${index * 100}%)`; 
+            dots.forEach((d,i)=> d.classList.toggle('active-dot', i===index)); 
+          };
+          
+          dots.forEach((dot,i) => { 
+            dot.addEventListener('click', (e) => { 
+              e.stopPropagation(); 
+              updateSlide(i); 
+            }); 
+          });
+        });
+      }
+
+      // नेक्स्ट बटन का फंक्शन
+      function attachNextButtons() {
+        document.querySelectorAll('.next-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const cardId = btn.dataset.card;
+            const gallery = btn.closest('.card-gallery');
+            const slider = gallery.querySelector('.gallery-slider');
+            const dots = gallery.querySelectorAll('.gallery-dot');
+            const totalImages = dots.length;
+            
+            // कौन सी इमेज एक्टिव है पता करो
+            let activeIndex = 0;
+            dots.forEach((dot, index) => {
+              if(dot.classList.contains('active-dot')) activeIndex = index;
+            });
+            
+            // अगली इमेज पर जाओ
+            let nextIndex = (activeIndex + 1) % totalImages;
+            
+            // स्लाइडर को मूव करो
+            slider.style.transform = `translateX(-${nextIndex * 100}%)`;
+            
+            // डॉट्स अपडेट करो
+            dots.forEach((d,i) => d.classList.toggle('active-dot', i === nextIndex));
+          });
         });
       }
 
@@ -858,7 +926,6 @@
         });
         document.getElementById('cartItemsList').innerHTML = itemsHtml || '<p style="color:#a28b72;">Your cart is empty</p>';
         
-        // qty events
         document.querySelectorAll('.qty-dec').forEach(b => b.addEventListener('click', (e) => { 
           let idx = e.target.closest('button')?.dataset?.index; 
           if(idx) { idx=parseInt(idx); if(cart[idx].qty>1) cart[idx].qty--; else cart.splice(idx,1); updateCartUI(); } 
@@ -873,13 +940,11 @@
         }));
       }
 
-      // Filter tabs
       function filterServices(cat) {
         document.querySelectorAll('.category-section').forEach(s => s.classList.toggle('hidden-category', s.dataset.category !== cat));
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.category === cat));
       }
 
-      // Lightbox
       const lightbox = document.getElementById('lightbox');
       document.addEventListener('click', (e) => {
         if(e.target.closest('.lightbox-btn')) {
@@ -890,17 +955,14 @@
       });
       lightbox.addEventListener('click', () => lightbox.classList.remove('show'));
 
-      // Cart toggle
       document.getElementById('cartFloat').addEventListener('click', (e) => { document.getElementById('cartPanel').classList.toggle('show'); });
 
-      // Modal & WhatsApp - fields can be blank
       const modal = document.getElementById('inquiryModal');
       document.getElementById('sendInquiryBtn').addEventListener('click', ()=> { if(cart.length) modal.classList.add('active'); else alert('Add services first'); });
       document.getElementById('closeModal').addEventListener('click', ()=> modal.classList.remove('active'));
       document.getElementById('bookEventHero').addEventListener('click', ()=> modal.classList.add('active'));
 
       document.getElementById('submitInquiry').addEventListener('click', ()=> {
-        // Get values - if blank, they remain blank in message
         const name = document.getElementById('inquiryName').value;
         const phone = document.getElementById('inquiryPhone').value;
         const eventType = document.getElementById('inquiryEventType').value;
@@ -908,11 +970,9 @@
         const location = document.getElementById('inquiryLocation').value;
         const msg = document.getElementById('inquiryMsg').value;
 
-        // Build cart items list
         let cartList = '';
         cart.forEach(i => { cartList += `${i.name} (${i.qty}x)\n`; });
         
-        // Create clean message - fields show exactly what user entered (blank stays blank)
         const fullMsg = `Hello Swara Events,
 
 I want to inquire about the following services:
@@ -928,12 +988,10 @@ Extra Message: ${msg}
 
 Please contact me.`;
 
-        // Encode and send
         window.open(`https://wa.me/919284969878?text=${encodeURIComponent(fullMsg)}`, '_blank');
         modal.classList.remove('active');
       });
 
-      // Initialize
       renderCards();
       setTimeout(()=> { 
         filterServices(categories[0]); 
